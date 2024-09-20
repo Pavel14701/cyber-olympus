@@ -1,2 +1,9 @@
 .env
+.venv
 *.db
+.pickle
+.key
+.map
+.webassets-cache
+__pycache__
+node_modules

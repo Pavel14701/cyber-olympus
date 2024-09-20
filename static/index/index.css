@@ -1,0 +1,90 @@
+body {
+  font-family: HelveticaNowDisplay, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  font-weight: 278;
+  font-style: normal;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+
+#stars {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6; }
+
+.header {
+  background-color: #121212;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 90001;
+  color: #c1c1bd; }
+  .header .href-games {
+    text-decoration: none;
+    color: inherit; }
+  .header .logo {
+    padding: 5%;
+    font-size: 60px; }
+    .header .logo .left {
+      margin-right: auto; }
+    .header .logo .comment {
+      margin-left: 20px;
+      margin-right: auto; }
+    .header .logo .right {
+      margin-left: auto; }
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white; }
+  section.section0 {
+    height: 100vh; }
+  section.section1 {
+    background: #1abc9c;
+    z-index: 1; }
+  section.section2 {
+    background: #3498db;
+    z-index: 2; }
+  section.section3 {
+    background: #9b59b6;
+    z-index: 3; }
+  section.section4 {
+    background: #e74c3c;
+    z-index: 4; }
+  section.section5 {
+    background: #f39c12;
+    z-index: 5; }
+  section.section6 {
+    background: #000000;
+    height: 75vh;
+    z-index: 7; }
+
+footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  backdrop-filter: blur(30px);
+  color: white;
+  width: 100%;
+  height: 35vh;
+  bottom: 0;
+  z-index: 8; }
+  footer p {
+    opacity: 1;
+    color: white;
+    text-align: center; }

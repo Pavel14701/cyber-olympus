@@ -1,0 +1,17 @@
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
+
+db = SQLAlchemy()
+
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    username = db.Column(db.String(150), nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(150), nullable=False)
+    balance = db.Column(db.Integer, nullable=True)
+    users_nft = db.Column(db.String(3000), nullable=True)
+    twitter_user_id = db.Column(db.String(150), unique=True, nullable=True)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
+    

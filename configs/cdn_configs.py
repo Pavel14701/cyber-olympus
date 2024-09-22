@@ -8,6 +8,7 @@ from utils.path_getter import PathGetter
 class AppCDNConfigs(PathGetter, ABC):
     def __init__(self) -> None:
         PathGetter.__init__(self)
+        ABC.__init__(self)
         EnvSingleton()
         self.__get_cdn_configs()
 
@@ -16,8 +17,11 @@ class AppCDNConfigs(PathGetter, ABC):
         if self.use_cdn:
             self.app.config['CDN_DOMAIN'] = self.check_env_var('APP_CDN_DOMAIN')
 
+
     def get_flask_cdn(self) -> Optional[CDN]:
         if self.use_cdn:
-            return CDN(self.app)
+            cdn = CDN(self.app)
+            cdn.init_app(self.app)
+            return cdn
         print('CDN is not used')
         return None

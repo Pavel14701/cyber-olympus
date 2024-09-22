@@ -31,21 +31,26 @@ body {
   z-index: 90001;
   color: #c1c1bd;
 }
+
 .header .href-games {
   text-decoration: none;
   color: inherit;
 }
+
 .header .logo {
   padding: 5%;
   font-size: 60px;
 }
+
 .header .logo .left {
   margin-right: auto;
 }
+
 .header .logo .comment {
   margin-left: 20px;
   margin-right: auto;
 }
+
 .header .logo .right {
   margin-left: auto;
 }
@@ -59,29 +64,36 @@ section {
   font-size: 2em;
   color: white;
 }
+
 section.section0 {
   height: 100vh;
 }
+
 section.section1 {
   background: #1abc9c;
   z-index: 1;
 }
+
 section.section2 {
   background: #3498db;
   z-index: 2;
 }
+
 section.section3 {
   background: #9b59b6;
   z-index: 3;
 }
+
 section.section4 {
   background: #e74c3c;
   z-index: 4;
 }
+
 section.section5 {
   background: #f39c12;
   z-index: 5;
 }
+
 section.section6 {
   background: #000000;
   height: 75vh;
@@ -100,10 +112,11 @@ footer {
   bottom: 0;
   z-index: 8;
 }
+
 footer p {
   opacity: 1;
   color: white;
   text-align: center;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=../index/styles/index.css.map */

@@ -8,6 +8,7 @@ from utils.path_getter import PathGetter
 class AppSessionConfigs(PathGetter, ABC):
     def __init__(self):
         PathGetter.__init__(self)
+        ABC.__init__(self)
         EnvSingleton()
 
     def get_flask_session(self) -> Session:
@@ -17,4 +18,6 @@ class AppSessionConfigs(PathGetter, ABC):
             host=self.check_env_var('APP_SESSION_REDIS_HOST'),
             port=self.check_env_var('APP_SESSION_REDIS_PORT'),
             db=self.check_env_var('APP_SESSION_REDIS_DB'))
-        return Session(self.app)
+        session = Session(self.app)
+        session.init_app(self.app)
+        return session

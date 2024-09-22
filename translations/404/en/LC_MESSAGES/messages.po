@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgid "Page not found"
+msgstr "Page not found"
+
+msgid "Error 404!"
+msgstr "Error 404"
+
+msgid "Sorry, page not found."
+msgstr "Sorry, page not found."
+
+msgid "Return to the"
+msgstr "Return to the"
+
+msgid " main page"
+msgid " main page"

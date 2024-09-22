@@ -7,9 +7,12 @@ body.loading, html.loading {
   font-weight: bold;
   font-size: clamp(32px, 24.5vw, 143px);
   -ms-overflow-style: none;
-  scrollbar-width: none; }
-  body.loading::-webkit-scrollbar, html.loading::-webkit-scrollbar {
-    display: none; }
+  scrollbar-width: none;
+}
+
+body.loading::-webkit-scrollbar, html.loading::-webkit-scrollbar {
+  display: none;
+}
 
 #loading {
   position: absolute;
@@ -20,7 +23,8 @@ body.loading, html.loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 #loading-animation {
   filter: invert(1) brightness(2);
@@ -29,51 +33,71 @@ body.loading, html.loading {
   margin-bottom: 20px;
   mask-image: linear-gradient(to top, black 50%, transparent 50%);
   mask-size: 100% 200%;
-  animation: draw 2s infinite; }
+  animation: draw 2s infinite;
+}
 
 @keyframes draw {
   0% {
     mask-position: 0% 0%;
-    opacity: 1; }
+    opacity: 1;
+  }
   50% {
     mask-position: 0% 100%;
-    opacity: 1; }
+    opacity: 1;
+  }
   70% {
     mask-position: 0% 100%;
-    opacity: 1; }
+    opacity: 1;
+  }
   95% {
     mask-position: 0 100%;
-    scale: 105%; }
+    scale: 105%;
+  }
   100% {
     mask-position: 0% 100%;
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
 
 @keyframes blink {
   0%, 20% {
-    content: ' '; }
+    content: ' ';
+  }
   25%, 45% {
-    content: ' .'; }
+    content: ' .';
+  }
   50%, 70% {
-    content: ' . .'; }
+    content: ' . .';
+  }
   75%, 95% {
-    content: ' . . .'; }
+    content: ' . . .';
+  }
   100% {
-    content: ' '; } }
+    content: ' ';
+  }
+}
 
 #loading-text-block {
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 #loading-text, #dots {
   display: inline-block;
   font-size: 30px;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 #dots {
   margin-left: 15px;
   width: 2em;
-  text-align: left; }
-  #dots::after {
-    content: '';
-    font-weight: bold;
-    animation: blink 1.5s infinite; }
+  text-align: left;
+}
+
+#dots::after {
+  content: '';
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+
+/*# sourceMappingURL=../loading/styles/loading.css.map */

@@ -7,6 +7,7 @@ from utils.path_getter import PathGetter
 class AppOAuthConfigs(PathGetter, ABC):
     def __init__(self) -> None:
         PathGetter.__init__(self)
+        ABC.__init__(self)
         EnvSingleton()
         self.__get_oauth_configs()
 

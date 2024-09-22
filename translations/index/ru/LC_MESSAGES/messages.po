@@ -1,16 +1,51 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Language: en\n"
+"Language: ru\n"
 
-msgid "Welcome to the Home Page"
-msgstr "Добро пожаловать на главную страницу"
+msgid "My Flask App"
+msgstr "My Flask App"
 
-msgid "Hello, Home Page!"
-msgstr "Привет, главная страница!"
+msgid "LOADING"
+msgstr "ЗАГРУЗКА"
 
-msgid "This is the home page content."
-msgstr "Это содержимое главной страницы."
+msgid "CYBER"
+msgstr "CYBER"
 
-msgid "Log in"
-msgstr "Войти"
+msgid "CYBER"
+msgstr "CYBER"
+
+msgid "OLYMPUS"
+msgstr "OLYMPUS"
+
+msgid "LOGIN"
+msgstr "ЛОГИН"
+
+msgid "ROADMAP"
+msgstr "ДОРОЖНАЯ КАРТА"
+
+msgid "STORE"
+msgstr "МАГАЗИН"
+
+msgid "SOCIAL"
+msgid "СОЦИАЛЬНЫЕ СЕТИ"
+
+msgid "Section 1"
+msgstr "Секция 1"
+
+msgid "Section 2"
+msgstr "Секция 2"
+
+msgid "Section 3"
+msgstr "Секция 3"
+
+msgid "Section 4"
+msgstr "Секция 4"
+
+msgid "Section 5"
+msgstr "Секция 5"
+
+msgid "© 2024 My Flask App"
+msgstr "© 2024 Моё Фласк Приложение"
+
+

@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/about.scss"],"names":[],"mappings":"AAAA;EACI;EACA","file":"about.css"}
+{
+	"version": 3,
+	"file": "../../scss/about.css",
+	"sources": [
+		"../../scss/about.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,CAAA;EACA,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,IAAI;CAClB"
+}

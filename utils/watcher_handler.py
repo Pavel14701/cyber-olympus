@@ -14,9 +14,7 @@ class TSHandler(FileSystemEventHandler):
         if event.src_path.endswith('.ts'):
             print(f"Detected change in {event.src_path}. Compiling TypeScript to JavaScript using Node.js...")
             filename = os.path.basename(event.src_path).replace('.ts', '')
-            print(filename)
             output_dir = re.sub(r'\\utils', '', os.path.abspath(f'static/{filename}/js/'))
-            print(output_dir)
             output_file = os.path.join(output_dir, f'{filename}.js')
             os.makedirs(output_dir, exist_ok=True)
             command = ['npx', 'tsc', '--outDir', output_dir, event.src_path]
@@ -34,9 +32,7 @@ class SCSSHandler(FileSystemEventHandler):
         if event.src_path.endswith('.scss'):
             print(f"Detected change in {event.src_path}. Compiling SCSS to CSS using python sass...")
             filename = os.path.basename(event.src_path).replace('.scss', '')
-            print(filename)
             output_dir = re.sub(r'\\utils', '', os.path.abspath(f'static/{filename}/styles/'))
-            print(output_dir)
             output_file = os.path.join(output_dir, f'{filename}.css')
             os.makedirs(output_dir, exist_ok=True)
             result = subprocess.run(['sass', event.src_path, output_file], shell=True, capture_output=True)

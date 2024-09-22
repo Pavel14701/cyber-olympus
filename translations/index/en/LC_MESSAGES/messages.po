@@ -3,18 +3,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en\n"
 
-msgid "Welcome to the Home Page"
-msgstr "Welcome to the Home Page"
+msgid "My Flask App"
+msgstr "My Flask App"
 
-msgid "Hello, Home Page!"
-msgstr "Hello, Home Page!"
+msgid "LOADING"
+msgstr "LOADING"
 
-msgid "This is the home page content."
-msgstr "This is the home page content."
+msgid "CYBER"
+msgstr "CYBER"
 
-msgid "Log in"
-msgstr "Log in"
+msgid "CYBER"
+msgstr "CYBER"
 
-msgid "Log out"
-msgstr "Log out"
+msgid "OLYMPUS"
+msgstr "OLYMPUS"
+
+msgid "LOGIN"
+msgstr "LOGIN"
+
+msgid "ROADMAP"
+msgstr "ROADMAP"
+
+msgid "STORE"
+msgstr "STORE"
+
+msgid "SOCIAL"
+msgid "SOCIAL"
+
+msgid "Section 1"
+msgstr "Section 1"
+
+msgid "Section 2"
+msgstr "Section 2"
+
+msgid "Section 3"
+msgstr "Section 3"
+
+msgid "Section 4"
+msgstr "Section 4"
+
+msgid "Section 5"
+msgstr "Section 5"
+
+msgid "© 2024 My Flask App"
+msgstr "© 2024 My Flask App"
+
 

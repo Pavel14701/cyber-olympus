@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ru\n"
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid "Error 404!"
+msgstr "Ошибка 404!"
+
+msgid "Sorry, page not found."
+msgstr "Извините, страница не найдена."
+
+msgid "Return to the"
+msgstr "Вернуться на"
+
+msgid " main page"
+msgstr " главную страницу"

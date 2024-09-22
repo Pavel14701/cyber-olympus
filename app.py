@@ -14,13 +14,11 @@ from flask_compress import Compress
 from flask import send_from_directory
 from os.path import join
 from configs.app_configs import AppConfigs
-from utils.app_utils import AppUtils
 
 
-class CyberOlympusApp(AppConfigs, AppUtils):
-    def __init__(self, debug:bool=None):
-        AppConfigs.__init__(self)
-        AppUtils.__init__(self)
+class CyberOlympusApp(AppConfigs):
+    def __init__(self, db:SQLAlchemy, debug:bool=None):
+        AppConfigs.__init__(self, db)
         self.debug = debug
         self.__get_configs()
         if debug:
@@ -29,13 +27,11 @@ class CyberOlympusApp(AppConfigs, AppUtils):
     def __get_configs(self):
         self.app: Flask = self.get_app()
         self.db: SQLAlchemy = self.get_flask_db()
-        self.cache: Cache = self.get_flask_cache()
         self.cdn: CDN = self.get_flask_cdn()
         self.session: Session = self.get_flask_session()
         self.login_manager: LoginManager = self.get_flask_login_manager()
         self.turbo: Turbo = self.get_flask_turbo()
         self.twitter: OAuth = self.get_oauth('twitter')
-        self.babel: Babel = self.get_flask_babel()
         self.compress: Compress = self.get_flask_compress()
         self.port = self.get_port()
 
@@ -52,7 +48,6 @@ class CyberOlympusApp(AppConfigs, AppUtils):
         
         @self.app.route('/register', methods=['GET', 'POST'])
         def register():
-            name = self.page_name()
             form:RegisterForm = RegisterForm()
             if form.validate_on_submit():
                 hashed_password = generate_password_hash(form.password.data, method='sha256')
@@ -60,13 +55,12 @@ class CyberOlympusApp(AppConfigs, AppUtils):
                 self.db.session.add(new_user)
                 self.db.session.commit()
                 return redirect(url_for('login.html'))
-            return render_template(f'{name}{self.HTML}', form=form)
+            return render_template('register.html', form=form, get_locale=self.get_locale)
 
 
 
         @self.app.route('/login', methods=['GET', 'POST'])
         def login():
-            name = self.page_name()
             form:LoginForm = LoginForm()
             if form.validate_on_submit():
                 user:User = User.query.filter_by(username=form.username.data).first()
@@ -74,7 +68,7 @@ class CyberOlympusApp(AppConfigs, AppUtils):
                     login_user(user)
                     return redirect(url_for('profile'))
                 flash('Invalid username or password')
-            return render_template(f'{name}{self.HTML}', form=form)
+            return render_template('login.html', form=form, get_locale=self.get_locale)
 
 
         @self.app.route('/profile')
@@ -82,7 +76,7 @@ class CyberOlympusApp(AppConfigs, AppUtils):
         @login_required
         def profile():
             name = self.page_name()
-            response = make_response(render_template(f'{name}{self.HTML}', name=current_user.username))
+            response = make_response(render_template(f'{name}{self.HTML}', name=current_user.username, get_locale=self.get_locale))
             response.headers['Cache-Control'] = 'private, max-age=3600'
             return response
 
@@ -146,8 +140,7 @@ class CyberOlympusApp(AppConfigs, AppUtils):
         @self.cache.cached(timeout=3600)
         @self.app.route('/')
         def index():
-            name = self.page_name()
-            response = make_response(render_template(f'{name}{self.HTML}'))
+            response = make_response(render_template('index.html', get_locale=self.get_locale))
             response.headers['Cache-Control'] = 'public, max-age=3600'
             return response
 
@@ -155,20 +148,18 @@ class CyberOlympusApp(AppConfigs, AppUtils):
         @self.cache.cached(timeout=3600)
         @self.app.route('/roadmap')
         def roadmap():
-            name = self.page_name()
-            response = make_response(render_template('roadmap.html'))
+            response = make_response(render_template('roadmap.html', get_locale=self.get_locale))
             response.headers['Cache-Control'] = 'public, max-age=3600'
             return response
 
-        @self.babel.localeselector
-        def get_locale():
-            return request.accept_languages.best_match(['en', 'ru', 'es'])
+        @self.app.errorhandler(404)
+        def page_not_found(e):
+            return render_template('404.html', get_locale=self.get_locale), 404
 
         self.app.route('/update')
         def update():
             dynamic_data = "Updated data"
             return self.turbo.stream(self.turbo.append(dynamic_data, target='dynamic-data'))
-
 
     def run(self):
         self.setup_routes()

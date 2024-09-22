@@ -6,7 +6,8 @@ from utils.path_getter import PathGetter
 
 class AppSecretConfigs(PathGetter, ABC):
     def __init__(self) -> None:
-        super().__init__()
+        PathGetter.__init__(self)
+        ABC.__init__(self)
         EnvSingleton()
 
     def __check_secret_key(self) -> bytes:

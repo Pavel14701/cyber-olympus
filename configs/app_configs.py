@@ -24,10 +24,12 @@ class AppUtilsConfig(ABC):
         EnvSingleton()
 
     def get_flask_turbo(self) -> Turbo:
-        return Turbo(self.app)
+        turbo = Turbo(self.app)
+        turbo.init_app(self.app)
+        return turbo
 
     def get_flask_compress(self) -> Compress:
-        self.app.config['COMPRESS_MIN_SIZE'] = 200
+        self.app.config['COMPRESS_MIN_SIZE'] = 500
         self.app.config['COMPRESS_MIMETYPES'] = [
             'text/html', 'text/css', 'text/xml', 'application/json', 'application/javascript',
             'text/plain', 'application/xml', 'application/xhtml+xml', 'application/rss+xml',
@@ -37,7 +39,9 @@ class AppUtilsConfig(ABC):
         self.cache.init_app(self.app)
         self.app.config['COMPRESS_CACHE_BACKEND'] = self.get_flask_cache
         self.app.config['COMPRESS_CACHE_KEY'] = self.custom_cache_key
-        return Compress(self.app)
+        compress = Compress(self.app)
+        compress.init_app(self.app)
+        return compress
 
     def custom_cache_key(self, response):
         return str(hash(response.data))

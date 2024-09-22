@@ -24,9 +24,7 @@ class AppUtilsConfig(ABC):
         EnvSingleton()
 
     def get_flask_turbo(self) -> Turbo:
-        turbo = Turbo(self.app)
-        turbo.init_app(self.app)
-        return turbo
+        return Turbo(self.app)
 
     def get_flask_compress(self) -> Compress:
         self.app.config['COMPRESS_MIN_SIZE'] = 500
@@ -37,8 +35,6 @@ class AppUtilsConfig(ABC):
             'application/x-font-ttf', 'application/vnd.ms-fontobject', 'font/opentype'
         ]
         self.cache.init_app(self.app)
-        self.app.config['COMPRESS_CACHE_BACKEND'] = self.get_flask_cache
-        self.app.config['COMPRESS_CACHE_KEY'] = self.custom_cache_key
         compress = Compress(self.app)
         compress.init_app(self.app)
         return compress

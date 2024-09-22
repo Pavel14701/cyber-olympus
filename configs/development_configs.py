@@ -25,13 +25,11 @@ class AppSCSSCompiler(PathGetter, ABC):
 
     def __compile_scss(self, page:str, scss_path:str, save_base_path:str) -> str:
         paths = self.__create_scss_save_paths(scss_path, page, save_base_path)
-        compiled_css, source_map = sass.compile(
+        compiled_css = sass.compile(
             filename=paths[0],
-            source_map_filename=paths[2],
             output_style='expanded'
         )
         self.__save_output_style(paths[1], compiled_css)
-        self.__save_output_style(paths[2], source_map)
         return paths[1]
 
     def __create_scss_save_paths(self, scss_path:str, page:str, save_base_path:str) -> Tuple[str]:

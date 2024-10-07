@@ -30,8 +30,8 @@ msgstr "STORE"
 msgid "SOCIAL"
 msgid "SOCIAL"
 
-msgid "Section 1"
-msgstr "Section 1"
+msgid "Welcome to Cyber ​​Olumpus."
+msgstr "Welcome to Cyber ​​Olumpus."
 
 msgid "Section 2"
 msgstr "Section 2"

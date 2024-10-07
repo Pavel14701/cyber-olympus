@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-250px * 12));
+      }
+    }
+
+    .works {
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      margin-top: 10vh;
+      width: 130%;
+      transform: rotate(5deg);
+      transform-origin: center;
+      margin-left: -30px;
+    }
+
+    .wrapper__works {
+      animation: scroll 24s linear infinite reverse;
+      display: flex;
+      gap: 80px;
+      width: calc(250px * 24); /* Увеличиваем ширину для дублирования */
+    }
+
+    .img__wrap {
+      display: flex;
+    }
+
+    .img__wrap img {
+      width: 250px;
+      height: 250px;
+    }
+  </style>
+</head>
+<body>
+  <section class="works">
+    <div class="wrapper__works">
+      
+      <div class="img__wrap">
+        <img src="nfts/img1.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img2.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img3.webp" alt="bluza">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img4.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img5.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img6.webp" alt="bluza">
+      </div> -->
+      <!-- Оригинальные изображения -->
+<!--      <div class="img__wrap">
+        <img src="nfts/img1.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img2.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img3.webp" alt="bluza">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img4.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img5.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img6.webp" alt="bluza">
+      </div> -->
+      <!-- Дублируем изображения в конце -->
+<!--      <div class="img__wrap">
+        <img src="nfts/img1.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img2.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img3.webp" alt="bluza">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img4.webp" alt="white">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img5.webp" alt="kombi">
+      </div>
+      <div class="img__wrap">
+        <img src="nfts/img6.webp" alt="bluza">
+      </div>
+    </div>
+  </section>
+-->
+<style>
+
+.edu-au-vic-wa-nt-guides {
+  font-family: "Edu AU VIC WA NT Guides", cursive;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+}
+  @keyframes scroll2 {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(calc(-330px * 6));
+      }
+  }
+  
+  .works2 {
+      overflow: visible;
+      box-sizing: border-box;
+      position: relative;
+      margin-top: 30vh;
+      width: 130%;
+      transform: rotate(-5deg);
+      transform-origin: center;
+      margin-left: -30px;
+      z-index: 0;
+  }
+  
+  .wrapper__works2 {
+      display: flex;
+      position: relative;
+      gap: 80px;
+      width: calc(250px * 12);
+      z-index: 0;
+  }
+  
+  .img__wrap2:nth-child(odd) {
+      display: flex;
+      position: relative;
+      width: 250px;
+      height: 250px;
+      z-index: 200;
+  }
+
+  .img__wrap2:nth-child(even) {
+      display: flex;
+      position: relative;
+      width: 250px;
+      height: 250px;
+      z-index: 0;
+  }
+
+  .img__wrap2 {
+    border-radius: 15px;
+    border: solid 0.25rem white;
+    box-shadow: 0.5rem 0.5rem 0 -0.25rem #023f52, 0.5rem 0.5rem 0 0 white;
+    filter: brightness(60%);
+    transition: box-shadow;
+  }
+
+  .img__wrap2 img{
+    border-radius: 15px;
+  }
+
+  .img__wrap2 img:hover{
+    transform: scale(105%);
+    border-radius: 15px;
+    border: solid 0.25rem white;
+  }
+
+  .img__wrap2:hover {
+    filter: brightness(110%);
+    border-radius: 15px;
+    box-shadow: 1rem 1rem 0 -0.25rem #023f52, 1rem 1rem 0 0 white;
+  }
+  
+  .overlay-text {
+    color: #ecdbd1;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: rotate(5deg) translate(-50%, -50%);
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 70px;
+      color: rgb(0, 0, 0);
+      z-index: 100;
+  }
+  .overlay-text h2{
+    color: #ecdbd1;
+    filter: drop-shadow(5px 5px 5px black); 
+  }
+  .animated-img {
+    animation: scroll2 24s linear infinite;
+}
+</style>
+
+<section class="works2">
+  <div class="wrapper__works2">
+      <div class="overlay-text"><h2 class="edu-au-vic-wa-nt-guides">Are You Ready ?</h2></div>
+
+      <div class="img__wrap2">
+          <img src="nfts/img1.webp" alt="white">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img2.webp" alt="kombi">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img3.webp" alt="bluza">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img4.webp" alt="white">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img5.webp" alt="kombi">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img6.webp" alt="bluza">
+      </div>
+      <!-- Дублируем изображения -->
+      <div class="img__wrap2">
+          <img src="nfts/img1.webp" alt="white">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img2.webp" alt="kombi">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img3.webp" alt="bluza">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img4.webp" alt="white">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img5.webp" alt="kombi">
+      </div>
+      <div class="img__wrap2">
+          <img src="nfts/img6.webp" alt="bluza">
+      </div>
+      
+  </div>
+</section>
+<script>
+  // Получаем все элементы с классом img__wrap2
+const imgWraps = document.querySelectorAll('.img__wrap2');
+
+// Добавляем класс с анимацией
+imgWraps.forEach(wrap => {
+    wrap.classList.add('animated-img');
+});
+</script>
+</body>
+</html>

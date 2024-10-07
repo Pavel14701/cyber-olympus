@@ -14,37 +14,117 @@
     <script src="{{ url_for('static', filename='all/js/cursor.js') }}" type="text/javascript"></script>
     {% include 'loading.html' %}
     <section class="section0">
-        <header class='header row'>
-            <a href="/games" class='href-games'>
-                <div class="logo">
-                    <span class="left">{{ _("CYBER") }}</span>
-                    <span class="comment">{{ _("THE GAME") }}</span>
-                    <span class="right">{{ _("OLYMPUS") }}</span>
+        <div class='container logo-section'>
+            <img class='logo' src="{{ url_for('static', filename='index/img/logo.webp')}}">
+        </div>
+        <div class='container menu-section'>
+            <header class='header row'>
+                <a href="/games" class='href-games'>
+                    <div class="logo row">
+                        <span class="left">{{ _("CYBER") }}</span>
+                        <span class="comment">{{ _("OLYMPUS") }}</span>
+                        <span class="right">{{ _("THE GAME") }}</span>
+                    </div>
+                </a>
+            </header>
+            <div class="nav-menu">
+                <ul>
+                    <li class="nav-menu edu-au-vic-wa-nt-guides" id="login">
+                        <img class='fire' id='img-login' src="{{ url_for('static', filename='index/img/fire.svg') }}" >
+                        {{ _('LOGIN') }}
+                    </li>
+                    <li class="nav-menu edu-au-vic-wa-nt-guides" id="roadmap">
+                        <img class='fire' id='img-roadmap' src="{{ url_for('static', filename='index/img/fire.svg') }}" >
+                        {{ _('ROADMAP') }}
+                    </li>
+                    <li class="nav-menu edu-au-vic-wa-nt-guides" id="store">
+                        <img class='fire' id='img-store' src="{{ url_for('static', filename='index/img/fire.svg') }}" >
+                        {{ _('STORE') }}
+                    </li>
+                    <li class="nav-menu edu-au-vic-wa-nt-guides" id="social">
+                        <img class='fire' id='img-social' src="{{ url_for('static', filename='index/img/fire.svg') }}" >
+                        {{ _('SOCIAL') }}
+                    </li>
+                </ul>
+                <div class='div-header-buttons'>
+                    <button class='menu-button edu-au-vic-wa-nt-guides' id='button-wallet-connect'>connect wallet</button>
+                    <button class='menu-button' id='dropdown-menu'>v</button>
                 </div>
-            </a>
-        </header>
-        <div class="header-menu">
-            <ul>
-                <li class="nav-menu" id="login">{{ _('LOGIN') }}</li>
-                <li class="nav-menu" id="roadmap">{{ _('ROADMAP') }}</li>
-                <li class="nav-menu" id="store">{{ _('STORE') }}</li>
-                <li class="nav-menu" id="social-media">{{ _('SOCIAL') }}</li>
-            </ul>
-        </div>
-    </section>
-    <section class="section1">
-        <h1>{{ _("Section 1") }}</h1>
-        <div>
-        </div>
-    </section>
-    <section class="section2">
-        <h2>{{ _("Section 2") }}</h2>
-        <div>
+            </div>
         </div>
     </section>
     <section class="section3">
-        <h2>{{ _("Section 3") }}</h2>
-        <div></div>
+        <section class="works">
+            <div class="wrapper__works">
+                <div class="overlay-text">
+                    <h2 class="edu-au-vic-wa-nt-guides">Are You Ready ?</h2>
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img1.webp') }}" alt="white">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img2.webp') }}" alt="kombi">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img3.webp') }}" alt="bluza">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img4.webp') }}" alt="white">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img5.webp') }}" alt="kombi">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img6.webp') }}" alt="bluza">
+                </div>
+                <!-- Дублируем изображения -->
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img1.webp') }}" alt="white">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img2.webp') }}" alt="kombi">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img3.webp') }}" alt="bluza">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img4.webp') }}" alt="white">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img5.webp') }}" alt="kombi">
+                </div>
+                <div class="img__wrap">
+                    <img src="{{ url_for('static', filename='index/img/nfts/img6.webp') }}" alt="bluza">
+                </div>
+            </div>
+            <script>
+                // Получаем все элементы с классом img__wrap2
+              const imgWraps = document.querySelectorAll('.img__wrap');
+              
+              // Добавляем класс с анимацией
+              imgWraps.forEach(wrap => {
+                  wrap.classList.add('animated-img');
+              });
+            </script>
+        </section>
+    </section>
+    <section class="section1">
+        <div class="image-container">
+            <img class='background' src="{{ url_for('static', filename='index/img/city-index.webp')}}">
+        </div>
+        <div class="row">
+            <img class='man wizard' src="{{ url_for('static', filename='index/img/wizard.webp')}}">
+            <h1>{{ _("Welcome to Cyber ​​Olumpus.") }}</h1>
+            <img class='man hunter' src="{{ url_for('static', filename='index/img/hunter.webp')}}">
+        </div>
+    </section>
+    <section class="section2">
+        <div class='img-section2'>
+            <img id='img2' src="{{ url_for('static', filename='index/img/img1.webp')}}">
+        </div>
+        <div class='text-section2'>
+            <h2>{{ _("Section 2") }}</h2>
+        </div>
     </section>
     <section class="section4">
         <h2>{{ _("Section 4") }}</h2>
